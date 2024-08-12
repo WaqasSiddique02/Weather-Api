@@ -1,0 +1,10 @@
+<h2>Weather App</h2>
+<input type="text" [(ngModel)]= "cityName" placeholder="Enter City Name">
+<button (click)="getWeatherData()">Get</button>
+<div *ngIf ="result">
+    <p>Weather: {{result.weather[0].main}}</p>
+    <p>Description: {{result.weather[0].description}}</p>
+    <p>Feels Like: {{result.main.feels_like}}</p>
+    <p>Country:{{result.sys.country}}</p>
+    <img [src]= "imageURL" alt="Weather Icon">
+</div>
