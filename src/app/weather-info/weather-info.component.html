@@ -1,10 +1,14 @@
-<h2>Weather App</h2>
-<input type="text" [(ngModel)]= "cityName" placeholder="Enter City Name">
-<button (click)="getWeatherData()">Get</button>
-<div *ngIf ="result">
-    <p>Weather: {{result.weather[0].main}}</p>
-    <p>Description: {{result.weather[0].description}}</p>
-    <p>Feels Like: {{result.main.feels_like}}</p>
-    <p>Country:{{result.sys.country}}</p>
-    <img [src]= "imageURL" alt="Weather Icon">
+<div class="card" style="width: 18rem; margin-left: 37%; margin-top: 7%; margin-bottom: 7%;">
+    <img class="card-img-top" [src]="imageURL" alt="Weather image" *ngIf="imageURL" style="background-color: rgb(168, 166, 166);">
+    <div class="card-body">
+        <h5 class="card-title">Weather App</h5>
+        <input class="form-control" type="text" [(ngModel)]= "cityName" placeholder="Enter City Name">
+        <button type="button" class="btn btn-dark" (click)="getWeatherData()" style="margin-top: 20px;">Search</button>
+    </div>
+    <ul class="list-group list-group-flush" *ngIf="result">
+        <li class="list-group-item">Weather: {{result.weather[0].main}}</li>
+        <li class="list-group-item">Description: {{result.weather[0].description}}</li>
+        <li class="list-group-item">Feels Like: {{result.main.feels_like}}</li>
+        <li class="list-group-item">Country:{{result.sys.country}}</li>
+    </ul>
 </div>

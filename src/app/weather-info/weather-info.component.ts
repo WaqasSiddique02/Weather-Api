@@ -23,8 +23,8 @@ export class WeatherInfoComponent {
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${this.cityName}&appid=${this.apikey}&units=metric`;
   this.http.get<string>(url).subscribe(response=>{
     this.result=response;
-
     console.log(this.result);
+    
     const icon=this.result.weather[0].icon;
     this.imageURL = "https://openweathermap.org/img/wn/" + icon + "@2x.png";    
     this.cityName="";
